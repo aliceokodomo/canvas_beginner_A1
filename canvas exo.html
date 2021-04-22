@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="en">
  <head>
   <meta charset="UTF-8" />
-  <title>canvas exo Allistrator</title>
+  <title>canvas exo</title>
   <script>
 
     function init() {
@@ -15,155 +16,166 @@
 
     function draw(ctx) {
 
-      // cieletVaisseau/sky
+      var gradient;
+
+      // cieletVaisseau/landscape
       ctx.save();
 
-      // cieletVaisseau/sky/Rectangle
+      // cieletVaisseau/landscape/sky
       ctx.save();
       ctx.beginPath();
-      ctx.moveTo(800.0, 348.8);
-      ctx.lineTo(0.0, 348.8);
-      ctx.lineTo(0.0, 0.0);
-      ctx.lineTo(800.0, 0.0);
-      ctx.lineTo(800.0, 348.8);
+      ctx.moveTo(800.0, 587.2);
+      ctx.lineTo(0.0, 587.2);
+      ctx.lineTo(0.0, 17.2);
+      ctx.lineTo(800.0, 17.2);
+      ctx.lineTo(800.0, 587.2);
       ctx.closePath();
       ctx.fillStyle = "rgb(21, 0, 255)";
+      ctx.fill();
+
+      // cieletVaisseau/landscape/ground
+      ctx.beginPath();
+      ctx.moveTo(800.0, 586.8);
+      ctx.lineTo(0.0, 586.8);
+      ctx.lineTo(0.0, 17.5);
+      ctx.lineTo(800.0, 17.5);
+      ctx.lineTo(800.0, 586.8);
+      ctx.closePath();
+      gradient = ctx.createLinearGradient(400.0, 586.8, 400.0, 17.5);
+      gradient.addColorStop(0.00, "rgb(245, 255, 10)");
+      gradient.addColorStop(0.17, "rgb(164, 255, 52)");
+      gradient.addColorStop(0.30, "rgb(83, 255, 93)");
+      gradient.addColorStop(0.47, "rgba(83, 255, 93, 0.50)");
+      gradient.addColorStop(1.00, "rgba(83, 255, 93, 0.00)");
+      ctx.fillStyle = gradient;
       ctx.fill();
 
       // cieletVaisseau/cup soucoup
       ctx.restore();
       ctx.beginPath();
-      ctx.moveTo(262.4, 179.5);
-      ctx.bezierCurveTo(262.4, 179.5, 295.5, 206.7, 327.0, 205.5);
-      ctx.bezierCurveTo(358.4, 204.4, 393.3, 181.1, 393.3, 181.1);
-      ctx.bezierCurveTo(393.3, 181.1, 368.7, 155.5, 329.0, 155.5);
-      ctx.bezierCurveTo(289.3, 155.5, 262.4, 179.5, 262.4, 179.5);
+      ctx.moveTo(262.4, 196.6);
+      ctx.bezierCurveTo(262.4, 196.6, 295.5, 223.9, 327.0, 222.7);
+      ctx.bezierCurveTo(358.4, 221.5, 393.3, 198.3, 393.3, 198.3);
+      ctx.bezierCurveTo(393.3, 198.3, 368.7, 172.6, 329.0, 172.6);
+      ctx.bezierCurveTo(289.3, 172.6, 262.4, 196.6, 262.4, 196.6);
       ctx.closePath();
       ctx.fillStyle = "rgb(218, 216, 216)";
       ctx.fill();
 
       // cieletVaisseau/cabine soucoupe
       ctx.beginPath();
-      ctx.moveTo(301.8, 159.3);
-      ctx.bezierCurveTo(301.8, 159.3, 311.3, 132.4, 326.7, 132.4);
-      ctx.bezierCurveTo(342.1, 132.4, 352.1, 159.3, 352.1, 159.3);
-      ctx.bezierCurveTo(352.1, 159.3, 336.1, 155.2, 327.0, 155.5);
-      ctx.bezierCurveTo(317.8, 155.8, 304.4, 158.1, 301.8, 159.3);
+      ctx.moveTo(301.8, 176.5);
+      ctx.bezierCurveTo(301.8, 176.5, 311.3, 149.5, 326.7, 149.5);
+      ctx.bezierCurveTo(342.1, 149.5, 352.1, 176.5, 352.1, 176.5);
+      ctx.bezierCurveTo(352.1, 176.5, 336.1, 172.3, 327.0, 172.6);
+      ctx.bezierCurveTo(317.8, 172.9, 304.4, 175.3, 301.8, 176.5);
       ctx.closePath();
       ctx.fillStyle = "rgb(255, 255, 255)";
       ctx.fill();
+
+      // cieletVaisseau/moon difference lueur externe
+      // This artwork uses an unsupported "Lighten" blending mode
+      // This unsupported artwork has been rasterized
+      ctx.drawImage(document.getElementById("image1"), 543.3, -0.5);
+
+      // cieletVaisseau/tir de vaisseau
+      ctx.beginPath();
+      ctx.moveTo(385.0, 206.5);
+      ctx.bezierCurveTo(384.4, 203.6, 517.7, 369.2, 517.7, 369.2);
+      // This artwork uses an unsupported dash style
+      ctx.lineWidth = 3.0;
+      ctx.strokeStyle = "rgb(236, 255, 0)";
+      ctx.stroke();
       ctx.restore();
 
-      // maison/Rectangle
+      // maison/house
       ctx.save();
       ctx.beginPath();
-      ctx.moveTo(51.7, 297.3);
-      ctx.lineTo(250.3, 297.3);
-      ctx.lineTo(250.3, 498.1);
-      ctx.lineTo(51.7, 498.1);
-      ctx.lineTo(51.7, 297.3);
+      ctx.moveTo(51.7, 314.5);
+      ctx.lineTo(250.3, 314.5);
+      ctx.lineTo(250.3, 515.3);
+      ctx.lineTo(51.7, 515.3);
+      ctx.lineTo(51.7, 314.5);
       ctx.closePath();
-      ctx.fillStyle = "rgb(176, 213, 227)";
+      ctx.fillStyle = "rgb(0, 242, 255)";
       ctx.fill();
 
       // maison/toit
       ctx.beginPath();
-      ctx.moveTo(51.7, 297.3);
-      ctx.lineTo(151.6, 199.6);
-      ctx.lineTo(250.3, 297.2);
-      ctx.lineTo(51.7, 297.3);
+      ctx.moveTo(51.7, 314.5);
+      ctx.lineTo(151.6, 216.7);
+      ctx.lineTo(250.3, 314.4);
+      ctx.lineTo(51.7, 314.5);
       ctx.closePath();
-      ctx.fillStyle = "rgb(195, 106, 25)";
+      ctx.fillStyle = "rgb(255, 0, 0)";
       ctx.fill();
 
       // maison/porte
       ctx.beginPath();
-      ctx.moveTo(179.7, 498.1);
-      ctx.lineTo(121.4, 498.1);
-      ctx.lineTo(121.4, 407.9);
-      ctx.lineTo(179.7, 407.9);
-      ctx.lineTo(179.7, 498.1);
+      ctx.moveTo(179.7, 515.3);
+      ctx.lineTo(121.4, 515.3);
+      ctx.lineTo(121.4, 425.0);
+      ctx.lineTo(179.7, 425.0);
+      ctx.lineTo(179.7, 515.3);
       ctx.closePath();
-      ctx.fillStyle = "rgb(199, 199, 199)";
+      ctx.fillStyle = "rgb(255, 0, 118)";
       ctx.fill();
 
       // maison/fenetre droite
       ctx.beginPath();
-      ctx.moveTo(232.3, 358.8);
-      ctx.lineTo(192.1, 358.8);
-      ctx.lineTo(192.1, 318.6);
-      ctx.lineTo(232.3, 318.6);
-      ctx.lineTo(232.3, 358.8);
+      ctx.moveTo(232.3, 375.9);
+      ctx.lineTo(192.1, 375.9);
+      ctx.lineTo(192.1, 335.7);
+      ctx.lineTo(232.3, 335.7);
+      ctx.lineTo(232.3, 375.9);
       ctx.closePath();
       ctx.fill();
 
       // maison/fenetre gauche
       ctx.beginPath();
-      ctx.moveTo(112.4, 356.6);
-      ctx.lineTo(72.2, 356.6);
-      ctx.lineTo(72.2, 316.4);
-      ctx.lineTo(112.4, 316.4);
-      ctx.lineTo(112.4, 356.6);
+      ctx.moveTo(112.4, 373.8);
+      ctx.lineTo(72.2, 373.8);
+      ctx.lineTo(72.2, 333.6);
+      ctx.lineTo(112.4, 333.6);
+      ctx.lineTo(112.4, 373.8);
       ctx.closePath();
-      ctx.fill();
-      ctx.restore();
-
-      // glace/cornet
-      ctx.save();
-      ctx.beginPath();
-      ctx.moveTo(302.8, 410.5);
-      ctx.lineTo(330.4, 410.5);
-      ctx.lineTo(316.6, 445.3);
-      ctx.lineTo(302.8, 410.5);
-      ctx.closePath();
-      ctx.fillStyle = "rgb(238, 213, 31)";
-      ctx.fill();
-
-      // glace/boule glace
-      ctx.beginPath();
-      ctx.moveTo(302.8, 410.5);
-      ctx.bezierCurveTo(302.8, 410.5, 304.1, 395.0, 316.4, 395.0);
-      ctx.bezierCurveTo(328.8, 395.0, 330.4, 410.5, 330.4, 410.5);
-      ctx.lineTo(302.8, 410.5);
-      ctx.closePath();
-      ctx.fillStyle = "rgb(236, 32, 130)";
       ctx.fill();
       ctx.restore();
 
       // voiture/Trac
       ctx.save();
       ctx.beginPath();
-      ctx.moveTo(477.3, 418.3);
-      ctx.lineTo(477.3, 369.6);
-      ctx.lineTo(526.3, 369.6);
-      ctx.lineTo(526.3, 319.0);
-      ctx.lineTo(705.0, 319.0);
-      ctx.lineTo(705.0, 368.6);
-      ctx.lineTo(755.0, 368.6);
-      ctx.lineTo(755.0, 418.3);
-      ctx.lineTo(477.3, 418.3);
+      ctx.moveTo(477.3, 435.5);
+      ctx.lineTo(477.3, 386.8);
+      ctx.lineTo(526.3, 386.8);
+      ctx.lineTo(526.3, 336.1);
+      ctx.lineTo(705.0, 336.1);
+      ctx.lineTo(705.0, 385.8);
+      ctx.lineTo(755.0, 385.8);
+      ctx.lineTo(755.0, 435.5);
+      ctx.lineTo(477.3, 435.5);
       ctx.closePath();
       ctx.fillStyle = "rgb(236, 32, 130)";
       ctx.fill();
 
       // voiture/roue gauche
       ctx.beginPath();
-      ctx.moveTo(532.3, 447.3);
-      ctx.bezierCurveTo(532.3, 463.3, 519.3, 476.3, 503.3, 476.3);
-      ctx.bezierCurveTo(487.3, 476.3, 474.3, 463.3, 474.3, 447.3);
-      ctx.bezierCurveTo(474.3, 431.3, 487.3, 418.3, 503.3, 418.3);
-      ctx.bezierCurveTo(519.3, 418.3, 532.3, 431.3, 532.3, 447.3);
+      ctx.moveTo(532.3, 464.5);
+      ctx.bezierCurveTo(532.3, 480.5, 519.3, 493.5, 503.3, 493.5);
+      ctx.bezierCurveTo(487.3, 493.5, 474.3, 480.5, 474.3, 464.5);
+      ctx.bezierCurveTo(474.3, 448.4, 487.3, 435.5, 503.3, 435.5);
+      ctx.bezierCurveTo(519.3, 435.5, 532.3, 448.4, 532.3, 464.5);
       ctx.closePath();
       ctx.fillStyle = "rgb(177, 162, 170)";
       ctx.fill();
 
       // voiture/roue droite
       ctx.beginPath();
-      ctx.moveTo(759.5, 447.5);
-      ctx.bezierCurveTo(759.5, 463.5, 746.5, 476.5, 730.5, 476.5);
-      ctx.bezierCurveTo(714.5, 476.5, 701.5, 463.5, 701.5, 447.5);
-      ctx.bezierCurveTo(701.5, 431.5, 714.5, 418.5, 730.5, 418.5);
-      ctx.bezierCurveTo(746.5, 418.5, 759.5, 431.5, 759.5, 447.5);
+      ctx.moveTo(759.5, 464.6);
+      ctx.bezierCurveTo(759.5, 480.6, 746.5, 493.6, 730.5, 493.6);
+      ctx.bezierCurveTo(714.5, 493.6, 701.5, 480.6, 701.5, 464.6);
+      ctx.bezierCurveTo(701.5, 448.6, 714.5, 435.6, 730.5, 435.6);
+      ctx.bezierCurveTo(746.5, 435.6, 759.5, 448.6, 759.5, 464.6);
       ctx.closePath();
       ctx.fill();
       ctx.restore();
@@ -171,106 +183,132 @@
       // bonhomme/biscuit
       ctx.save();
       ctx.beginPath();
-      ctx.moveTo(218.3, 436.8);
-      ctx.bezierCurveTo(218.3, 436.8, 210.3, 427.8, 210.3, 410.3);
-      ctx.bezierCurveTo(210.3, 392.8, 226.8, 380.0, 243.5, 380.0);
-      ctx.bezierCurveTo(260.3, 380.0, 277.1, 395.3, 277.1, 408.4);
-      ctx.bezierCurveTo(277.1, 421.6, 273.3, 431.1, 268.1, 436.8);
-      ctx.lineTo(308.6, 436.8);
-      ctx.bezierCurveTo(308.6, 436.8, 316.6, 437.8, 316.6, 444.1);
-      ctx.bezierCurveTo(316.6, 450.3, 309.3, 451.3, 309.3, 451.3);
-      ctx.lineTo(271.8, 451.3);
-      ctx.lineTo(271.8, 535.9);
-      ctx.bezierCurveTo(271.8, 535.9, 268.6, 543.1, 260.1, 543.1);
-      ctx.bezierCurveTo(251.6, 543.1, 249.6, 536.6, 249.6, 536.6);
-      ctx.lineTo(249.6, 521.1);
-      ctx.bezierCurveTo(249.6, 521.1, 249.1, 514.2, 244.3, 514.2);
-      ctx.bezierCurveTo(239.5, 514.2, 238.5, 519.6, 238.5, 519.6);
-      ctx.lineTo(238.5, 536.4);
-      ctx.bezierCurveTo(238.5, 536.4, 232.8, 543.4, 225.5, 543.1);
-      ctx.bezierCurveTo(218.3, 542.9, 215.8, 536.9, 215.8, 536.9);
-      ctx.lineTo(215.8, 452.3);
-      ctx.lineTo(176.0, 452.3);
-      ctx.bezierCurveTo(176.0, 452.3, 170.3, 449.8, 170.3, 442.6);
-      ctx.bezierCurveTo(170.3, 435.3, 177.8, 435.6, 177.8, 435.6);
-      ctx.lineTo(218.3, 436.8);
+      ctx.moveTo(218.3, 454.0);
+      ctx.bezierCurveTo(218.3, 454.0, 210.3, 445.0, 210.3, 427.5);
+      ctx.bezierCurveTo(210.3, 410.0, 226.8, 397.2, 243.5, 397.2);
+      ctx.bezierCurveTo(260.3, 397.2, 277.1, 412.4, 277.1, 425.6);
+      ctx.bezierCurveTo(277.1, 438.7, 273.3, 448.2, 268.1, 454.0);
+      ctx.lineTo(308.6, 454.0);
+      ctx.bezierCurveTo(308.6, 454.0, 316.6, 455.0, 316.6, 461.2);
+      ctx.bezierCurveTo(316.6, 467.5, 309.3, 468.5, 309.3, 468.5);
+      ctx.lineTo(271.8, 468.5);
+      ctx.lineTo(271.8, 553.0);
+      ctx.bezierCurveTo(271.8, 553.0, 268.6, 560.3, 260.1, 560.3);
+      ctx.bezierCurveTo(251.6, 560.3, 249.6, 553.8, 249.6, 553.8);
+      ctx.lineTo(249.6, 538.3);
+      ctx.bezierCurveTo(249.6, 538.3, 249.1, 531.4, 244.3, 531.4);
+      ctx.bezierCurveTo(239.5, 531.4, 238.5, 536.8, 238.5, 536.8);
+      ctx.lineTo(238.5, 553.5);
+      ctx.bezierCurveTo(238.5, 553.5, 232.8, 560.5, 225.5, 560.3);
+      ctx.bezierCurveTo(218.3, 560.0, 215.8, 554.0, 215.8, 554.0);
+      ctx.lineTo(215.8, 469.5);
+      ctx.lineTo(176.0, 469.5);
+      ctx.bezierCurveTo(176.0, 469.5, 170.3, 467.0, 170.3, 459.7);
+      ctx.bezierCurveTo(170.3, 452.5, 177.8, 452.7, 177.8, 452.7);
+      ctx.lineTo(218.3, 454.0);
       ctx.closePath();
-      ctx.fillStyle = "rgb(139, 111, 36)";
+      ctx.fillStyle = "rgb(40, 255, 0)";
       ctx.fill();
+      ctx.strokeStyle = "rgb(222, 0, 255)";
+      ctx.lineCap = "round";
+      ctx.lineJoin = "round";
+      ctx.stroke();
 
       // bonhomme/oil gauche
       ctx.beginPath();
-      ctx.moveTo(238.0, 407.6);
-      ctx.bezierCurveTo(238.0, 410.6, 235.6, 413.1, 232.5, 413.1);
-      ctx.bezierCurveTo(229.4, 413.1, 226.9, 410.6, 226.9, 407.6);
-      ctx.bezierCurveTo(226.9, 404.5, 229.4, 402.0, 232.5, 402.0);
-      ctx.bezierCurveTo(235.6, 402.0, 238.0, 404.5, 238.0, 407.6);
+      ctx.moveTo(238.0, 424.7);
+      ctx.bezierCurveTo(238.0, 427.8, 235.6, 430.3, 232.5, 430.3);
+      ctx.bezierCurveTo(229.4, 430.3, 226.9, 427.8, 226.9, 424.7);
+      ctx.bezierCurveTo(226.9, 421.7, 229.4, 419.2, 232.5, 419.2);
+      ctx.bezierCurveTo(235.6, 419.2, 238.0, 421.7, 238.0, 424.7);
       ctx.closePath();
-      ctx.fillStyle = "rgb(255, 255, 255)";
+      ctx.fillStyle = "rgb(21, 0, 255)";
       ctx.fill();
 
       // bonhomme/oeil droit
       ctx.beginPath();
-      ctx.moveTo(260.3, 407.6);
-      ctx.bezierCurveTo(260.3, 410.6, 257.8, 413.1, 254.7, 413.1);
-      ctx.bezierCurveTo(251.7, 413.1, 249.2, 410.6, 249.2, 407.6);
-      ctx.bezierCurveTo(249.2, 404.5, 251.7, 402.0, 254.7, 402.0);
-      ctx.bezierCurveTo(257.8, 402.0, 260.3, 404.5, 260.3, 407.6);
+      ctx.moveTo(260.3, 424.7);
+      ctx.bezierCurveTo(260.3, 427.8, 257.8, 430.3, 254.7, 430.3);
+      ctx.bezierCurveTo(251.7, 430.3, 249.2, 427.8, 249.2, 424.7);
+      ctx.bezierCurveTo(249.2, 421.7, 251.7, 419.2, 254.7, 419.2);
+      ctx.bezierCurveTo(257.8, 419.2, 260.3, 421.7, 260.3, 424.7);
       ctx.closePath();
       ctx.fill();
 
       // bonhomme/sourci gauche
       ctx.beginPath();
-      ctx.moveTo(226.9, 396.2);
-      ctx.bezierCurveTo(226.9, 396.2, 228.9, 393.7, 232.5, 393.7);
-      ctx.bezierCurveTo(236.0, 393.7, 238.0, 396.2, 238.0, 396.2);
-      ctx.strokeStyle = "rgb(255, 255, 255)";
-      ctx.lineCap = "round";
+      ctx.moveTo(226.9, 413.4);
+      ctx.bezierCurveTo(226.9, 413.4, 228.9, 410.9, 232.5, 410.9);
+      ctx.bezierCurveTo(236.0, 410.9, 238.0, 413.4, 238.0, 413.4);
+      ctx.strokeStyle = "rgb(21, 0, 255)";
       ctx.stroke();
 
       // bonhomme/souci droit
       ctx.beginPath();
-      ctx.moveTo(249.2, 396.2);
-      ctx.bezierCurveTo(249.2, 396.2, 251.2, 393.7, 254.7, 393.7);
-      ctx.bezierCurveTo(258.3, 393.7, 260.3, 396.2, 260.3, 396.2);
+      ctx.moveTo(249.2, 413.4);
+      ctx.bezierCurveTo(249.2, 413.4, 251.2, 410.9, 254.7, 410.9);
+      ctx.bezierCurveTo(258.3, 410.9, 260.3, 413.4, 260.3, 413.4);
       ctx.stroke();
 
       // bonhomme/bouche
       ctx.beginPath();
-      ctx.moveTo(229.7, 418.8);
-      ctx.bezierCurveTo(229.7, 418.8, 238.3, 421.6, 243.3, 421.6);
-      ctx.bezierCurveTo(248.3, 421.6, 257.3, 418.8, 257.3, 418.8);
-      ctx.bezierCurveTo(257.3, 418.8, 251.4, 427.5, 243.5, 427.5);
-      ctx.bezierCurveTo(235.5, 427.5, 229.7, 418.8, 229.7, 418.8);
+      ctx.moveTo(229.7, 436.0);
+      ctx.bezierCurveTo(229.7, 436.0, 238.3, 438.7, 243.3, 438.7);
+      ctx.bezierCurveTo(248.3, 438.7, 257.3, 436.0, 257.3, 436.0);
+      ctx.bezierCurveTo(257.3, 436.0, 251.4, 444.6, 243.5, 444.6);
+      ctx.bezierCurveTo(235.5, 444.6, 229.7, 436.0, 229.7, 436.0);
       ctx.closePath();
       ctx.strokeStyle = "rgb(255, 30, 0)";
       ctx.stroke();
 
       // bonhomme/bouton bas
       ctx.beginPath();
-      ctx.moveTo(249.1, 458.4);
-      ctx.bezierCurveTo(249.1, 461.4, 246.6, 463.9, 243.5, 463.9);
-      ctx.bezierCurveTo(240.4, 463.9, 237.9, 461.4, 237.9, 458.4);
-      ctx.bezierCurveTo(237.9, 455.3, 240.4, 452.8, 243.5, 452.8);
-      ctx.bezierCurveTo(246.6, 452.8, 249.1, 455.3, 249.1, 458.4);
+      ctx.moveTo(249.1, 475.5);
+      ctx.bezierCurveTo(249.1, 478.6, 246.6, 481.1, 243.5, 481.1);
+      ctx.bezierCurveTo(240.4, 481.1, 237.9, 478.6, 237.9, 475.5);
+      ctx.bezierCurveTo(237.9, 472.5, 240.4, 470.0, 243.5, 470.0);
+      ctx.bezierCurveTo(246.6, 470.0, 249.1, 472.5, 249.1, 475.5);
       ctx.closePath();
       ctx.fillStyle = "rgb(106, 44, 114)";
       ctx.fill();
 
       // bonhomme/bouton bas
       ctx.beginPath();
-      ctx.moveTo(249.1, 475.2);
-      ctx.bezierCurveTo(249.1, 478.2, 246.6, 480.7, 243.5, 480.7);
-      ctx.bezierCurveTo(240.4, 480.7, 237.9, 478.2, 237.9, 475.2);
-      ctx.bezierCurveTo(237.9, 472.1, 240.4, 469.6, 243.5, 469.6);
-      ctx.bezierCurveTo(246.6, 469.6, 249.1, 472.1, 249.1, 475.2);
+      ctx.moveTo(249.1, 492.3);
+      ctx.bezierCurveTo(249.1, 495.4, 246.6, 497.9, 243.5, 497.9);
+      ctx.bezierCurveTo(240.4, 497.9, 237.9, 495.4, 237.9, 492.3);
+      ctx.bezierCurveTo(237.9, 489.2, 240.4, 486.8, 243.5, 486.8);
+      ctx.bezierCurveTo(246.6, 486.8, 249.1, 489.2, 249.1, 492.3);
       ctx.closePath();
+      ctx.fill();
+      ctx.restore();
+
+      // glace/cornet
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(294.8, 430.7);
+      ctx.lineTo(322.4, 430.7);
+      ctx.lineTo(308.6, 465.4);
+      ctx.lineTo(294.8, 430.7);
+      ctx.closePath();
+      ctx.fillStyle = "rgb(238, 255, 31)";
+      ctx.fill();
+
+      // glace/boule glace
+      ctx.beginPath();
+      ctx.moveTo(294.8, 430.7);
+      ctx.bezierCurveTo(294.8, 430.7, 296.1, 415.2, 308.4, 415.2);
+      ctx.bezierCurveTo(320.8, 415.2, 322.4, 430.7, 322.4, 430.7);
+      ctx.lineTo(294.8, 430.7);
+      ctx.closePath();
+      ctx.fillStyle = "rgb(236, 32, 130)";
       ctx.fill();
       ctx.restore();
     }
   </script>
  </head>
  <body onload="init()">
-   <canvas id="canvas" width="800" height="544"></canvas>
+   <canvas id="canvas" width="800" height="588"></canvas>
+   <img alt="moon difference lueur externe" id="image1" style="display: none" src="image2.png" />
  </body>
 </html>
