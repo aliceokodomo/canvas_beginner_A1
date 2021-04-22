@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>cercle Pi</title>
+</head>
+<!-- https://developer.mozilla.org/fr/docs/Web/API/CanvasRenderingContext2D/arc -->
+<body>
+<canvas id='canvas'>le navigateur ne supporte canvas</canvas>
+<canvas id='canvas2'>le navigateur ne supporte canvas</canvas>
+  <script>
+  var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+
+ctx.beginPath();
+ctx.arc(100, 100, 50, 1.5 * Math.PI, 0.5 * Math.PI, false);
+ctx.stroke();
+
+
+function fillCircle()
+{
+  var canvas = document.getElementById("canvas2");
+  var context = canvas.getContext("2d");
+  context.beginPath();
+  context.fillStyle="#FF4422"
+  context.arc(80, 80, 70, 0, 2 * Math.PI);
+  context.fill();
+}
+fillCircle();
+
+    </script>
+    </body>
+    </html>
